@@ -1,0 +1,10 @@
+# FORMAT DATA BARANG:
+# Kategori|ID|Nama|TarifHarian|Deskripsi|Stok|Tersedia|Aktif|BiayaTambahan
+Paket Snorkeling|SNK-001|Paket Masker & Snorkel|50000|Masker tempered glass dan snorkel dry top|5|true|true|0
+Paket Snorkeling|SNK-002|Paket Fin Snorkeling|45000|Fin snorkeling lentur ukuran all size|4|true|true|0
+Alat Pancing|PNC-001|Joran Pancing Laut|75000|Joran carbon kuat khusus mancing laut|3|true|true|15000
+Alat Pancing|PNC-002|Reel Pancing Shimano|60000|Reel spinning gear ratio halus tahan air laut|3|true|true|10000
+Perlengkapan Keselamatan|SFT-001|Life Jacket Dewasa|35000|Rompi pelampung standar keselamatan dewasa|8|true|true|8000
+Perlengkapan Keselamatan|SFT-002|Pelampung Anak|25000|Rompi pelampung anak dengan peluit darurat|6|true|true|5000
+Paket Snorkeling|SNK-999|Kacamata Selam VIP|75000|Kacamata selam anti embun|12|true|true|0
+Paket Snorkeling|snk-003|baju karet|20000|baju khusus renang|4|true|true|0
