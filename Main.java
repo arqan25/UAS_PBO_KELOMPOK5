@@ -238,9 +238,7 @@ public class Main {
         }
     }
 
-    /**
-     * Memandu Admin untuk mengedit, menonaktifkan, atau menghapus barang
-     * inventaris.
+    /** Memandu Admin untuk mengedit, menonaktifkan, atau menghapus barang inventaris.
      */
     private static void adminEditAtauNonaktifkanBarang() {
         System.out.println("\n--- KELOLA / EDIT BARANG ---");
@@ -448,11 +446,6 @@ public class Main {
     // MENU PENYEWA
     // =========================================================================
 
-    /**
-     * Menjalankan navigasi menu untuk peran Penyewa.
-     *
-     * @param penyewa objek akun Penyewa yang sedang login
-     */
     private static void jalankanMenuPenyewa(Penyewa penyewa) {
         boolean tetapLogin = true;
         while (tetapLogin) {
@@ -521,11 +514,6 @@ public class Main {
         System.out.println(garis);
     }
 
-    /**
-     * Memandu Penyewa untuk menambahkan barang ke dalam keranjang belanja sewa.
-     *
-     * @param penyewa akun penyewa aktif
-     */
     private static void penyewaTambahKeKeranjang(Penyewa penyewa) {
         penyewaLihatBarangTersedia();
         System.out.print("\nMasukkan ID Barang yang ingin disewa: ");
@@ -542,12 +530,6 @@ public class Main {
         }
     }
 
-    /**
-     * Menampilkan isi keranjang belanja sewa milik penyewa serta menyediakan opsi
-     * penghapusan.
-     *
-     * @param penyewa akun penyewa aktif
-     */
     private static void penyewaLihatAtauHapusKeranjang(Penyewa penyewa) {
         KeranjangSewa keranjang = penyewa.getKeranjang();
         ArrayList<Barang> items = keranjang.getItems();
@@ -691,13 +673,6 @@ public class Main {
         }
     }
 
-    /**
-     * Menampilkan riwayat transaksi milik Penyewa (hanya transaksi yang sudah
-     * disetujui / selesai).
-     * Serta memberikan opsi untuk mencetak invoice teks lengkap.
-     *
-     * @param penyewa akun penyewa aktif
-     */
     private static void penyewaLihatRiwayat(Penyewa penyewa) {
         ArrayList<Transaksi> riwayat = service.getRiwayatPenyewa(penyewa);
         System.out.println("\n======================== RIWAYAT TRANSAKSI ANDA ========================");
@@ -741,15 +716,6 @@ public class Main {
             }
         }
     }
-
-    /**
-     * Memotong string jika panjangnya melebihi batas kolom untuk kerapian tabel
-     * CLI.
-     *
-     * @param teks  teks input
-     * @param batas panjang maksimal
-     * @return string yang dipotong atau asli
-     */
     private static String potongTeks(String teks, int batas) {
         if (teks == null)
             return "";
@@ -759,12 +725,6 @@ public class Main {
         return teks;
     }
 
-    /**
-     * Mendapatkan rincian string biaya tambahan sesuai kategori barang.
-     *
-     * @param b objek barang
-     * @return string biaya tambahan
-     */
     private static String getBiayaTambahanStr(Barang b) {
         if (b instanceof AlatPancing) {
             return "Perawatan: Rp " + rupiahFormat.format(((AlatPancing) b).getBiayaPerawatan());
@@ -775,16 +735,6 @@ public class Main {
         }
     }
 
-    /**
-     * Mem-parsing string input uang dari pengguna menjadi BigDecimal.
-     * Mendukung format penulisan Indonesia dengan titik pemisah ribuan (misal:
-     * "35.000"),
-     * format polos ("35000"), maupun dengan awalan "Rp" atau "Rp.".
-     *
-     * @param input string input dari pengguna
-     * @return objek BigDecimal yang sesuai
-     * @throws NumberFormatException jika format angka tidak valid
-     */
     private static BigDecimal parseUang(String input) {
         if (input == null || input.trim().isEmpty()) {
             throw new NumberFormatException("Input nominal uang kosong.");
